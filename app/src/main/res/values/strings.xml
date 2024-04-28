@@ -9,5 +9,6 @@
     <!--Seleção da jogada-->
     <string name="txt_nome_jogador">Jogador 1</string>
     <string name="txt_selecao_jogada">Selecionar jogada</string>
+    <string name="txt_resultado">Resultado</string>
 
 </resources>
