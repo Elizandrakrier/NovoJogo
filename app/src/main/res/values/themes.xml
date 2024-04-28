@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.NovoJogoAndroid" parent="Base.Theme.NovoJogoAndroid" />
+
+    <style name="Theme.NovoJogoAndroid.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>
