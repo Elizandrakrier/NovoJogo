@@ -35,6 +35,8 @@
         app:layout_constraintEnd_toEndOf="parent">
     </TextView>
 
+    <!--inserir um edit text, o que acha? -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_home"
         android:layout_width="match_parent"

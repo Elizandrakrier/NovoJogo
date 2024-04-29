@@ -1,7 +1,7 @@
 <resources>
 
     <!--Home-->
-    <string name="app_name">NovoJogoAndroid</string>
+    <string name="app_name">Jokenpo</string>
     <string name="btn_inicio">Iniciar</string>
     <string name="tool_bar">Jokenpo</string>
     <string name="txt_inicio">Bem vindo ao Jokenpo</string>
