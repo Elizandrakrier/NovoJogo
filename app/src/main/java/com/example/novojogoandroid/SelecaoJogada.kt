@@ -1,22 +1,41 @@
 package com.example.novojogoandroid
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import com.example.novojogoandroid.databinding.SelecaoJogadaBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 class SelecaoJogada : AppCompatActivity() {
 
     private val binding by lazy { SelecaoJogadaBinding.inflate(layoutInflater) }
+    lateinit var drawerHeader: DrawerLayout
+    lateinit var navView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        val toolbarInicio = binding.toolbarHomeSelecao
+        setSupportActionBar(toolbarInicio)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        drawerHeader = binding.drawerLayout
+        navView= binding.navView
+
+        spinnerJogada()
+
+    }
+
+    fun spinnerJogada() {
         val spinner = binding.spinnerSelecao
         val listIntem = listOf("Pedra", "Tesoura", "Papel")
 
@@ -36,6 +55,5 @@ class SelecaoJogada : AppCompatActivity() {
             }
 
         }
-
     }
 }
