@@ -4,6 +4,6 @@
     <item
         android:id="@+id/menu_home"
         android:title="@string/txt_home"
-        android:icon="@drawable/ic_menu"
+        android:icon="@drawable/ic_back"
         app:showAsAction="ifRoom"/>
 </menu>

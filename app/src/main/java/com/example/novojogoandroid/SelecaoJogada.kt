@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.novojogoandroid.databinding.SelecaoJogadaBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,6 +40,10 @@ class SelecaoJogada : AppCompatActivity() {
     private fun setUpToolBar(){
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        drawerHeader.openDrawer(GravityCompat.START)
+        return true
     }
 
     fun spinnerJogada() {
