@@ -53,7 +53,7 @@
             android:layout_height="60dp"
             android:background="@color/toolbar"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:menu="@menu/btn_nav">
+            app:menu="@menu/btn_nav_jogador_resultado">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 

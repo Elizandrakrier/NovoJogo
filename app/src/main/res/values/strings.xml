@@ -5,6 +5,7 @@
     <string name="btn_inicio">Iniciar</string>
     <string name="tool_bar">Jokenpo</string>
     <string name="txt_inicio">Bem vindo ao Jokenpo</string>
+    <string name="txt_home">Home</string>
 
     <!--Seleção da jogada-->
     <string name="txt_nome_jogador">Jogador 1</string>

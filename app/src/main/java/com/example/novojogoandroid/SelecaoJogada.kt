@@ -32,7 +32,13 @@ class SelecaoJogada : AppCompatActivity() {
         navView= binding.navView
 
         spinnerJogada()
+        setUpToolBar()
 
+    }
+
+    private fun setUpToolBar(){
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
     }
 
     fun spinnerJogada() {
