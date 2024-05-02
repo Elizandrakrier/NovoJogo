@@ -3,10 +3,8 @@ package com.example.novojogoandroid
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -20,6 +18,7 @@ class SelecaoJogada : AppCompatActivity() {
     private val binding by lazy { SelecaoJogadaBinding.inflate(layoutInflater) }
     lateinit var drawerHeader: DrawerLayout
     lateinit var navView: NavigationView
+    lateinit var btnNavigationView: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,16 +29,21 @@ class SelecaoJogada : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         drawerHeader = binding.drawerLayout
-        navView= binding.navView
+        navView = binding.navView
+        btnNavigationView = binding.btnNavMenu
+
+        binding.btnNavMenu.setOnClickListener {
+            val intent = Intent (this, Resultado::class.java)
+            startActivity(intent)
+        }
 
         spinnerJogada()
         setUpToolBar()
-
     }
 
     private fun setUpToolBar(){
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
     }
     override fun onSupportNavigateUp(): Boolean {
         drawerHeader.openDrawer(GravityCompat.START)

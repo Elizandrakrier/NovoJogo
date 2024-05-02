@@ -16,5 +16,7 @@
     <string name="txt_resultado_principal">Resultado</string>
     <string name="txt_jogador_ganhou">O jogador xxx ganhou</string>
 
+    <!--Resultado-->
+    <string name="txt_back_home">Reiniciar</string>
 
 </resources>
