@@ -19,6 +19,10 @@ class Resultado: AppCompatActivity() {
         setSupportActionBar(toolbarResultado)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
+        val imgBackHome = binding.imgBackResultado
+        imgBackHome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

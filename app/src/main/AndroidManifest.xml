@@ -13,6 +13,14 @@
         android:theme="@style/Theme.NovoJogoAndroid"
         tools:targetApi="31">
 
+        <activity android:name=".Resultado"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Resultado">
+            </meta-data>
+        </activity>
+
         <activity android:name=".SelecaoJogada"
             android:exported="true"
             android:theme="@style/Theme.NovoJogoAndroid.NoActionBar">

@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -28,17 +27,19 @@ class SelecaoJogada : AppCompatActivity() {
         setSupportActionBar(toolbarInicio)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        val imgBack = binding.imgBack
+        imgBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         drawerHeader = binding.drawerLayout
         navView = binding.navView
         btnNavigationView = binding.btnNavMenu
 
-        binding.btnNavMenu.setOnClickListener {
-            val intent = Intent (this, Resultado::class.java)
-            startActivity(intent)
-        }
-
         spinnerJogada()
         setUpToolBar()
+        drawerSelecao()
     }
 
     private fun setUpToolBar(){
@@ -48,6 +49,22 @@ class SelecaoJogada : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         drawerHeader.openDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun drawerSelecao(){
+        drawerHeader.setOnClickListener{menuItem ->
+            when(menuItem.id){
+                R.id.btn_jogador1 -> {
+                    val intentJogador = Intent(this, SelecaoJogada::class.java)
+                    startActivity(intentJogador)
+                }
+                R.id.btn_resultado -> {
+                    val intenetResultado = Intent(this, Resultado::class.java)
+                    startActivity(intenetResultado)
+                }
+                else -> false
+            }
+        }
     }
 
     fun spinnerJogada() {
@@ -62,13 +79,12 @@ class SelecaoJogada : AppCompatActivity() {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedItem = parent.getItemAtPosition(position).toString()
-                Toast.makeText(this@SelecaoJogada, "Você selecionou $selectedItem",
-                    Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@SelecaoJogada, "Você selecionou $selectedItem",
+//                    Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
-
         }
     }
 }
