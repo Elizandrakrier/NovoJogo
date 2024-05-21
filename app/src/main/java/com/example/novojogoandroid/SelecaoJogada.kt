@@ -37,9 +37,12 @@ class SelecaoJogada : AppCompatActivity() {
         navView = binding.navView
         btnNavigationView = binding.btnNavMenu
 
+        btnNavigationView.setBackgroundColor(android.graphics.Color.TRANSPARENT)
+
         spinnerJogada()
         setUpToolBar()
         drawerSelecao()
+        btnNavView()
     }
 
     private fun setUpToolBar(){
@@ -51,16 +54,34 @@ class SelecaoJogada : AppCompatActivity() {
         return true
     }
 
-    private fun drawerSelecao(){
-        drawerHeader.setOnClickListener{menuItem ->
-            when(menuItem.id){
+    private fun btnNavView(){
+        btnNavigationView.setOnItemSelectedListener{menuItem ->
+            when(menuItem.itemId){
                 R.id.btn_jogador1 -> {
-                    val intentJogador = Intent(this, SelecaoJogada::class.java)
-                    startActivity(intentJogador)
+                    val intentBtnJogador = Intent(this, MainActivity::class.java)
+                    startActivity(intentBtnJogador)
+                    true
                 }
                 R.id.btn_resultado -> {
+                    val intentBtnResultado = Intent(this, Resultado::class.java)
+                    startActivity(intentBtnResultado)
+                    true
+                }else -> false
+            }
+        }
+    }
+    private fun drawerSelecao(){
+        navView.setNavigationItemSelectedListener{menuItem ->
+            when(menuItem.itemId){
+                R.id.drawer_jogador -> {
+                    val intentJogador = Intent(this, SelecaoJogada::class.java)
+                    startActivity(intentJogador)
+                    true
+                }
+                R.id.drawer_resultado -> {
                     val intenetResultado = Intent(this, Resultado::class.java)
                     startActivity(intenetResultado)
+                    true
                 }
                 else -> false
             }

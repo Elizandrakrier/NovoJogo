@@ -63,13 +63,13 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/btn_nav_menu_resultado"
-            android:background="@color/toolbar"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:paddingTop="12dp"
             android:paddingBottom="5dp"
             app:labelVisibilityMode="labeled"
             app:itemIconSize="24sp"
+            android:background="@drawable/button_transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:menu="@menu/btn_nav_jogador_resultado">
 
