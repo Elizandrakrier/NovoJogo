@@ -25,6 +25,17 @@
 
         </androidx.appcompat.widget.Toolbar>
 
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/cont_navView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/jokenpo_nav"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            tools:ignore="MissingConstraints">
+            
+        </androidx.fragment.app.FragmentContainerView>
+
         <ImageView
             android:id="@+id/img_back"
             android:layout_width="wrap_content"
